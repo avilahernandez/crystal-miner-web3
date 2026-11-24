@@ -1,0 +1,177 @@
+/* Reset básico de márgenes y configuración de caja para todos los elementos */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Estilos globales del cuerpo: Fuente monoespaciada, fondo oscuro y texto neón */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #050510; 
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh; 
+    padding: 15px; 
+    /* Evitar scroll horizontal */
+    overflow-x: hidden; 
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Efecto visual de líneas de escaneo (CRT) sobre toda la pantalla */
+.scanlines {
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+    background-size: 100% 4px; 
+    pointer-events: none; 
+    z-index: 50;
+}
+
+/* Estilos del encabezado y separador inferior */
+header { 
+    width: 100%; 
+    max-width: 380px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border-bottom: 1px dashed #00ffff; 
+    padding-bottom: 10px; 
+    margin-bottom: 20px; 
+    font-size: 0.75rem; /* ~12px */
+}
+
+/* Reset de botones */
+button { 
+    background: transparent; 
+    border: none; 
+    color: inherit; 
+    font-family: inherit; 
+    font-size: inherit; 
+    cursor: pointer; 
+    text-shadow: inherit;
+}
+
+/* Color específico para el botón de conexión */
+#connectBtn { 
+    color: #ff00ff; 
+    text-align: right;
+}
+
+/* Contenedor del cristal */
+.crystal-container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+}
+
+/* Tamaño y efecto de pulsación del cristal */
+#crystalBtn { 
+    width: 200px; 
+    height: 200px; 
+    transition: transform 0.1s; 
+}
+#crystalBtn:active { 
+    transform: scale(0.95); 
+}
+
+/* Estilos del gráfico SVG */
+#crystalBtn svg { 
+    width: 100%; 
+    height: 100%; 
+    fill: none; 
+    stroke-width: 1.5; 
+    filter: drop-shadow(0 0 10px #00ffff); 
+}
+
+/* Contador de puntos */
+.counter { 
+    text-align: center; 
+    margin-top: 15px; 
+}
+.counter p:first-child { 
+    font-size: 1.8rem; /* ~28px */
+    color: #ffff00; 
+    text-shadow: 0 0 8px #ffff00; 
+    font-weight: bold; 
+}
+.counter p:last-child { 
+    font-size: 0.75rem; 
+    color: #00ffff; 
+}
+
+/* Barra de energía */
+.energy-bar { 
+    width: 100%; 
+    max-width: 380px; 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.75rem; 
+    color: #ffff00; 
+    margin: 20px 0 10px; 
+}
+
+/* Panel de estado */
+.status-panel { 
+    width: 100%; 
+    max-width: 380px; 
+    border: 1px solid #00ffff; 
+    padding: 15px; 
+    background: rgba(0,0,0,0.5); 
+    box-shadow: 0 0 10px rgba(0,255,255,0.3) inset, 0 0 10px rgba(0,255,255,0.3); 
+    font-size: 0.75rem; 
+    margin-bottom: 20px; 
+}
+.status-panel h2 { 
+    text-align: center; 
+    font-size: 0.75rem; 
+    margin-bottom: 10px; 
+    letter-spacing: 1px;
+}
+
+/* Filas de datos */
+.row { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 5px; 
+    color: white; 
+}
+.row span:last-child { 
+    color: #00ffff; 
+}
+
+/* Botón de Refinar */
+#refineBtn { 
+    width: 100%; 
+    max-width: 380px; 
+    padding: 12px; 
+    border: 1px solid #ff00ff; 
+    color: #ff00ff; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    box-shadow: 0 0 10px rgba(255,0,255,0.5); 
+    margin-bottom: 20px; 
+    transition: all 0.3s;
+}
+#refineBtn:disabled { 
+    border-color: #444; 
+    color: #444; 
+    box-shadow: none; 
+}
+
+/* Sección de mejoras */
+.upgrades { 
+    display: flex; 
+    gap: 10px; 
+    width: 100%; 
+    max-width: 380px; 
+}
+.upgrades button { 
+    flex: 1; 
+    border: 1px solid #00ffff; 
+    padding: 10px; 
+    font-size: 0.65rem; 
+    text-align: left; 
+}
