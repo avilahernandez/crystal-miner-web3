@@ -17,10 +17,10 @@ Aprovechar mi amplia experiencia en desarrollo de software para dominar rápidam
 *   Lógica de juego (minado de puntos con clics y niveles).
 
 ## 📌 Estado del Proyecto
-*   [x] Día 1: Estructura del proyecto y repositorio.
+*   [ ] Día 1: Estructura del proyecto y repositorio.
 *   [ ] Día 2: Interfaz visual y estilos.
 *   [ ] Día 3: Integración de la lógica Web3 (Phantom).
-*   [ ] Día 4: Smart Contract y despliegue final.
+*   [x] Día 4: Smart Contract y despliegue final.
 
 ---
 *Este proyecto es parte de una serie "Build in Public" documentada en LinkedIn.*
