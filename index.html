@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica del documento y codificación de caracteres -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crystal Miner SPA</title>
-    
-    <!-- Hoja de estilos principal (Diseño Cyberpunk/Terminal) -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Importación de Ethers.js v6 desde CDN para la interacción con la blockchain -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.0/ethers.umd.min.js"></script>
 </head>
 <body>
-    <!-- Capa decorativa para el efecto de líneas de escaneo (CRT) -->
     <div class="scanlines"></div>
-    
-    <!-- Encabezado principal: Título del juego y botón de conexión Web3 -->
     <header>
         <h1>CRYSTAL MINER v1.0</h1>
-        <button id="connectBtn">[ [CONECTAR WALLET] ]</button>
+        <div style="display: flex; gap: 10px;">
+            <!-- Botón de reinicio para pruebas -->
+            <button id="resetBtn" style="color: #ffaa00;">[RESET]</button>
+            <button id="connectBtn">[ [CONECTAR WALLET] ]</button>
+        </div>
     </header>
 
     <main>
-        <!-- Contenedor principal del área de juego (El Cristal) -->
         <div class="crystal-container">
-            <!-- Botón interactivo que contiene el gráfico vectorial (SVG) del cristal -->
             <button id="crystalBtn">
                 <svg viewBox="0 0 200 200">
-                    <!-- Polígonos y líneas que dibujan la estructura geométrica del cristal -->
                     <polygon points="100,10 40,90 100,190" stroke="#00ffff" />
                     <polygon points="100,10 40,90 60,110 100,190" stroke="#00ffff" stroke-dasharray="4" />
                     <line x1="100" y1="10" x2="100" y2="190" stroke="#00ffff" />
@@ -38,21 +31,17 @@
                     <line x1="160" y1="70" x2="100" y2="130" stroke="#ff00ff" />
                 </svg>
             </button>
-            
-            <!-- Contador de puntos locales (Off-chain) -->
             <div class="counter">
                 <p id="gemPoints">0</p>
                 <p>GEMPOINTS</p>
             </div>
         </div>
 
-        <!-- Barra visual de energía del jugador (Estática por ahora) -->
         <div class="energy-bar">
             <span>ENERGIA: [##########---]</span>
             <span>85%</span>
         </div>
 
-        <!-- Panel de estado: Muestra información del balance Web3 y progreso del jugador -->
         <div class="status-panel">
             <h2>=== ESTADO DEL JUGADOR ===</h2>
             <div class="row"><span>$QUEST BALANCE:</span> <span id="questBalance">0.00</span></div>
@@ -60,17 +49,13 @@
             <div class="row"><span>PUNTOS ACUM:</span> <span id="progress">0 / 100</span></div>
         </div>
 
-        <!-- Botón para ejecutar la transacción en la blockchain (Refinar tokens) -->
         <button id="refineBtn" disabled>[ REFINAR ]</button>
 
-        <!-- Sección de mejoras del juego (UI preparada para futuras implementaciones) -->
         <div class="upgrades">
             <button>[+ PICO LVL.5]<br>5000 GEM</button>
             <button>[AUTO-MINER]<br>15K GEM</button>
         </div>
     </main>
-
-    <!-- Lógica de interacción y conexión Web3 -->
     <script src="app.js"></script>
 </body>
 </html>
